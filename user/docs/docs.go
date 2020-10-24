@@ -19,7 +19,6 @@ var doc = `{
         "description": "{{.Description}}",
         "title": "{{.Title}}",
         "contact": {},
-        "license": {},
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -168,8 +167,8 @@ var SwaggerInfo = swaggerInfo{
 	Host:        "",
 	BasePath:    "",
 	Schemes:     []string{"http", "https"},
-	Title:       "User API",
-	Description: "User microservice server.",
+	Title:       "This is My User API",
+	Description: "User microservice server for test.",
 }
 
 type s struct{}

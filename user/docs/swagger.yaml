@@ -41,9 +41,8 @@ definitions:
     type: object
 info:
   contact: {}
-  description: User microservice server.
-  license: {}
-  title: User API
+  description: User microservice server for test.
+  title: This is My User API
 paths:
   /user/:
     post:

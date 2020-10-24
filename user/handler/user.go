@@ -3,11 +3,9 @@ package handler
 import (
 	"net/http"
 
-	"github.com/mayur-tolexo/demo/user/model"
-
-	"github.com/mayur-tolexo/demo/db"
-
 	"github.com/gin-gonic/gin"
+	"github.com/mayur-tolexo/demo/db"
+	"github.com/mayur-tolexo/demo/user/model"
 	"github.com/swaggo/swag/example/celler/httputil"
 )
 
@@ -19,7 +17,9 @@ import (
 // @Success 200 {object} model.UserList
 // @Router /users/ [get]
 func ListUser() func(c *gin.Context) {
-	users := model.UserList{[]model.UserDetail{model.UserDetail{db.User{Name: "Test"}}}}
+
+	user := model.UserDetail{db.User{UserID: 1, Name: "Test", Email: "test@gmail.com"}}
+	users := model.UserList{[]model.UserDetail{user}}
 	return func(c *gin.Context) {
 		c.JSON(200, users)
 	}

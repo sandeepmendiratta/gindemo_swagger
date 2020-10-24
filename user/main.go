@@ -1,15 +1,17 @@
 package main
 
 import (
-	_ "github.com/mayur-tolexo/demo/user/docs"
 	"github.com/mayur-tolexo/demo/user/handler"
 
 	"github.com/gin-gonic/gin"
-	httpSwagger "github.com/swaggo/http-swagger"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+
+	_ "github.com/mayur-tolexo/demo/user/docs"
 )
 
-// @title User API
-// @description User microservice server.
+// @title This is My User API
+// @description User microservice server for test.
 // @schemes http https
 // @securityDefinitions.basic BasicAuth
 func main() {
@@ -17,8 +19,6 @@ func main() {
 
 	r.GET("/users/", handler.ListUser())
 	r.POST("/user/", handler.CreateUser())
-	r.GET("/swagger/*any", func(c *gin.Context) {
-		httpSwagger.WrapHandler(c.Writer, c.Request)
-	})
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.Run()
 }

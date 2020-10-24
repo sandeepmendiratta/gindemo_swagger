@@ -5,10 +5,9 @@
     ],
     "swagger": "2.0",
     "info": {
-        "description": "User microservice server.",
-        "title": "User API",
-        "contact": {},
-        "license": {}
+        "description": "User microservice server for test.",
+        "title": "This is My User API",
+        "contact": {}
     },
     "paths": {
         "/user/": {
